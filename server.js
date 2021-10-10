@@ -15,9 +15,12 @@ var option = {
   sort: "sim"
 }
 
-const http = require('http').createServer(app);
-http.listen(process.env.PORT||8080, function () {
-  console.log('listening on 8080')
+// const http = require('http').createServer(app);
+// http.listen(process.env.PORT||8080, function () {
+//   console.log('listening on 8080')
+// });
+app.listen(process.env.PORT || 8080, function() {
+  console.log('now listening...')
 });
 
 app.use(cors({
