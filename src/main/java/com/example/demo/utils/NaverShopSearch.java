@@ -12,7 +12,7 @@ import java.util.List;
 
 @Component
 public class NaverShopSearch {
-    public String search(String query) {
+    public String search(String query, String option) {
         RestTemplate rest = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.add("X-Naver-Client-Id", "9kXUWrIibgOTcsHKxVjV");
@@ -21,7 +21,7 @@ public class NaverShopSearch {
         HttpEntity<String> requestEntity = new HttpEntity<String>(body, headers);
 
         ResponseEntity<String> responseEntity =
-                rest.exchange("https://openapi.naver.com/v1/search/shop.json?query=" + query +"&display=27&start=1&sort=sim", HttpMethod.GET, requestEntity, String.class);
+                rest.exchange("https://openapi.naver.com/v1/search/shop.json?query=" + query +"&display=27&start=1&sort="+option , HttpMethod.GET, requestEntity, String.class);
 
         String response = responseEntity.getBody();
         return response;

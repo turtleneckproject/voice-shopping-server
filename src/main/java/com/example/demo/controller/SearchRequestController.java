@@ -17,8 +17,8 @@ public class SearchRequestController {
     private final NaverShopSearch naverShopSearch;
 
     @GetMapping("/api/item")
-    public List<ItemDto> getItems(@RequestParam String keyword){
-        String resultString = naverShopSearch.search(keyword);
+    public List<ItemDto> getItems(@RequestParam String keyword, @RequestParam String option){
+        String resultString = naverShopSearch.search(keyword, option);
         System.out.println(keyword);
         return naverShopSearch.fromJSONtoItems(resultString);
     }
