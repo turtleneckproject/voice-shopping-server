@@ -22,7 +22,7 @@ public class UserController {
     int insertUser(@RequestBody UserVO user){
 
         String ID = user.getId();
-        String PWD = user.getPwd();
+        //String PWD = user.getPwd();
 
         System.out.println(ID);
         return userService.register(user);
