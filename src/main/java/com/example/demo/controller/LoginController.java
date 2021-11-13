@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController {
 
     private final UserRepository userRepository;
+
     @Autowired
     LoginService loginService;
 

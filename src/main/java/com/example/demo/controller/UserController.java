@@ -1,13 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.UserVO;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @CrossOrigin("*")
@@ -26,5 +24,10 @@ public class UserController {
 
         System.out.println(ID);
         return userService.register(user);
+    }
+
+    @GetMapping("/register/check")
+    int checkId(@RequestParam String checkid){
+        return userService.check(checkid);
     }
 }

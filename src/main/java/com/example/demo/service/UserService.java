@@ -27,4 +27,9 @@ public class UserService {
             return 1;
         }
     }
+
+    public int check(String checkid){
+        if(userRepository.existsById(checkid))return -1;
+        else return 1;
+    }
 }
