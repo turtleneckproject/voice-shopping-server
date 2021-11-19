@@ -14,18 +14,19 @@ import javax.persistence.Table;
 @Entity
 @Setter
 @Getter
-@Table(name="user")
-public class UserVO {
+@Table(name="card")
+public class CardVO {
+
     @Id
-    @Column(name = "id", nullable = false)
-    private String id;
+    @Column(name = "rowid")
+    private int rowid;
 
-    @Column(name="pwd")
-    private String pwd;
+    @Column(name = "userid")
+    private String userid;
 
-    @Column(name="name")
-    private String name;
+    @Column(name = "card_company")
+    private String card_company;
 
-    @Column(name="address")
-    private String address;
+    @Column(name = "card_num")
+    private String card_num;
 }

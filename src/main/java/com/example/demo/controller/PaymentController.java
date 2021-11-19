@@ -24,7 +24,7 @@ public class PaymentController {
         paymentService.pluspayment(newitems);
     }
 
-    @GetMapping("/payment/showpayment")                                   // 장바구니 목록 반환
+    @GetMapping("/payment/showpayment")                                   // 결제 목록 반환
     List<PaymentVO> showbasket(@RequestParam String customer){
         return paymentService.showpayment(customer);
     }
