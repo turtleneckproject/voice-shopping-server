@@ -17,7 +17,7 @@ public class CardController {
     @Autowired
     CardService cardService;
 
-    @GetMapping("card/checkcard")
+    @GetMapping("/card/checkcard")
     int check(@RequestParam String userid){
         return cardService.cardcheck(userid);
     }
