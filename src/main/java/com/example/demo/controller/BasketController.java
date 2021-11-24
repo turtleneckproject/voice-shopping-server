@@ -25,4 +25,14 @@ public class BasketController {
     List<BasketVO> show(@RequestParam String customer){
         return basketService.showbasket(customer);
     }
+
+    @GetMapping("/basket/deleteall")
+    int deleteall(@RequestParam String customer){
+       return basketService.deleteall(customer);
+    }
+
+    @GetMapping("/basket/deleteone")
+    int deleteone(@RequestParam int rowid){
+        return basketService.deleteone(rowid);
+    }
 }
