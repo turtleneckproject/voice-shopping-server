@@ -22,7 +22,6 @@ public class BasketService {
         temp.setImage(newitem.getImage());
         temp.setPrice(newitem.getPrice());
         temp.setPid(newitem.getPid());
-        temp.setNum(newitem.getNum());
         temp.setRowid(newitem.getRowid());
         basketRepository.save(temp);
         return 1;

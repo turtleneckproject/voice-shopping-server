@@ -32,7 +32,4 @@ public class BasketVO {
     @Column(name = "pid")
     private String pid;
 
-    @Column(name = "num")
-    private String num;
-
 }
