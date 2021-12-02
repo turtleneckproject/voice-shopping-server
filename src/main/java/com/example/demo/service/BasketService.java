@@ -14,7 +14,7 @@ import java.util.List;
 public class BasketService {
     private final BasketRepository basketRepository;
 
-    public void plusitem(BasketVO newitem){                             // 장바구니에 아이템 추가
+    public int plusitem(BasketVO newitem){                             // 장바구니에 아이템 추가
 
         BasketVO temp = new BasketVO();
         temp.setCustomer(newitem.getCustomer());
@@ -25,6 +25,7 @@ public class BasketService {
         temp.setNum(newitem.getNum());
         temp.setRowid(newitem.getRowid());
         basketRepository.save(temp);
+        return 1;
     }
 
     public List showbasket(String customer){                              // 해당 회원의 장바구니 목록 반환

@@ -17,8 +17,8 @@ public class BasketController {
     BasketService basketService;
 
     @PostMapping("/basket/plusitem")                                    // 장바구니에 추가
-    void plus(@RequestBody BasketVO newitem){
-        basketService.plusitem(newitem);
+    int plus(@RequestBody BasketVO newitem){
+        return basketService.plusitem(newitem);
     }
 
     @GetMapping("/basket/showbasket")                                   // 장바구니 목록 반환
