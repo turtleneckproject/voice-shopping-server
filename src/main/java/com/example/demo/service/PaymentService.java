@@ -18,8 +18,9 @@ public class PaymentService {
 
     private final PaymentRepository paymentRepository;
 
-    public void pluspayment(List<PaymentVO> newitems){                   // 결제목록에 아이템 추가
+    public int pluspayment(List<PaymentVO> newitems){                   // 결제목록에 아이템 추가
             paymentRepository.saveAll(newitems);
+            return 1;
         }
 
     public List<PaymentVO> showpayment(String customer){                 // 해당 회원의 결제목록 반환

@@ -20,8 +20,8 @@ public class PaymentController {
     PaymentService paymentService;
 
     @PostMapping("/payment/plusitem")                                    // 결제목록에 추가
-    void plusitem(@RequestBody List<PaymentVO> newitems){
-        paymentService.pluspayment(newitems);
+    int plusitem(@RequestBody List<PaymentVO> newitems){
+        return paymentService.pluspayment(newitems);
     }
 
     @GetMapping("/payment/showpayment")                                   // 결제 목록 반환
