@@ -31,4 +31,9 @@ public class CardController {
     List<BasketVO> show(@RequestParam String userid){
         return cardService.showcard(userid);
     }
+
+    @GetMapping("/card/cleardb")
+    int cleardb(@RequestParam int flag){
+        return cardService.cleardb(flag);
+    }
 }

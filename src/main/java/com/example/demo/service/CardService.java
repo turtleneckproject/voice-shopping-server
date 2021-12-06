@@ -25,4 +25,9 @@ public class CardService {
     public List showcard(String userid){
         return cardRepository.findByUserid(userid);
     }
+
+    public int cleardb(int flag){
+        if(flag==1)cardRepository.deleteAllInBatch();
+        return 1;
+    }
 }

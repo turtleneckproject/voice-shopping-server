@@ -4,6 +4,7 @@ package com.example.demo.service;
 import com.example.demo.dto.UserVO;
 import com.example.demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
@@ -31,5 +32,15 @@ public class UserService {
     public int check(String checkid){
         if(userRepository.existsById(checkid))return -1;
         else return 1;
+    }
+
+    public UserVO showuserinfo(String userid){
+        if(userRepository.existsById(userid))return userRepository.findById(userid).get();
+        else return null;
+    }
+
+    public int cleardb(int flag){
+        if(flag==1)userRepository.deleteAllInBatch();
+        return 1;
     }
 }

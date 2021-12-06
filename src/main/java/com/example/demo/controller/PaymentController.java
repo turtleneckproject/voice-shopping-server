@@ -28,4 +28,9 @@ public class PaymentController {
     List<PaymentVO> showbasket(@RequestParam String customer){
         return paymentService.showpayment(customer);
     }
+
+    @GetMapping("/payment/cleardb")
+    int cleardb(@RequestParam int flag){
+        return paymentService.cleardb(flag);
+    }
 }

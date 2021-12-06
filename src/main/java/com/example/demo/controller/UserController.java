@@ -30,4 +30,14 @@ public class UserController {
     int checkId(@RequestParam String checkid){
         return userService.check(checkid);
     }
+
+    @GetMapping("user/showinfo")
+    UserVO showinfo(@RequestParam String userid){
+        return userService.showuserinfo(userid);
+    }
+
+    @GetMapping("user/cleardb")
+    int cleardb(@RequestParam int flag){
+        return userService.cleardb(flag);
+    }
 }

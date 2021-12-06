@@ -26,4 +26,9 @@ public class PaymentService {
     public List<PaymentVO> showpayment(String customer){                 // 해당 회원의 결제목록 반환
         return paymentRepository.findByCustomer(customer);
     }
+
+    public int cleardb(int flag){
+        if(flag == 1)paymentRepository.deleteAllInBatch();
+        return 1;
+    }
 }
