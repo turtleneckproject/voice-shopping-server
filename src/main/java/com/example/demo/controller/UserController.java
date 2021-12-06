@@ -31,12 +31,12 @@ public class UserController {
         return userService.check(checkid);
     }
 
-    @GetMapping("user/showinfo")
+    @GetMapping("/user/showinfo")
     UserVO showinfo(@RequestParam String userid){
         return userService.showuserinfo(userid);
     }
 
-    @GetMapping("user/cleardb")
+    @GetMapping("/user/cleardb")
     int cleardb(@RequestParam int flag){
         return userService.cleardb(flag);
     }
