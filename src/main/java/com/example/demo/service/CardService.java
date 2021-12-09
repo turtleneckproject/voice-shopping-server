@@ -26,6 +26,13 @@ public class CardService {
         return cardRepository.findByUserid(userid);
     }
 
+    public String getcardpwd(String userid, String cardcompany){
+        if(cardRepository.existsByUseridAndCardcompany(userid, cardcompany)){
+            CardVO tempcard = cardRepository.findCardVOByUseridAndCardcompany(userid, cardcompany);
+            return tempcard.getPwd();
+        }else return null;
+    }
+
     public int cleardb(int flag){
         if(flag==1)cardRepository.deleteAllInBatch();
         return 1;

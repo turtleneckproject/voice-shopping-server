@@ -4,6 +4,7 @@ package com.example.demo.dto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.context.annotation.Bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,9 +25,12 @@ public class CardVO {
     @Column(name = "userid")
     private String userid;
 
-    @Column(name = "card_company")
-    private String card_company;
+    @Column(name = "cardcompany")
+    private String cardcompany;
 
     @Column(name = "card_num")
     private String card_num;
+
+    @Column(name = "pwd")
+    private String pwd;
 }

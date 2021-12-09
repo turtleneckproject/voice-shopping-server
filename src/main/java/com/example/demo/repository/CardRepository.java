@@ -10,6 +10,8 @@ import java.util.List;
 public interface CardRepository extends JpaRepository<CardVO, String> {
 
     List<CardVO> findByUserid(String userid);
-
+    //CardVO findByUseridAndCard_company(String userid, String card_company);
+    CardVO findCardVOByUseridAndCardcompany(String userid, String cardcompany);
+    boolean existsByUseridAndCardcompany(String userid, String cardcompany);
     boolean existsByUserid(String userid);
 }

@@ -32,6 +32,15 @@ public class CardController {
         return cardService.showcard(userid);
     }
 
+    @GetMapping("/card/checkpwd")
+    int checkpwd(@RequestParam String userid, @RequestParam int index, @RequestParam char input, @RequestParam String cardcompany){
+        String temppwd = cardService.getcardpwd(userid, cardcompany);
+        if(temppwd == null)return -1;
+
+        if(temppwd.charAt(index-1) == input)return 1;
+        else return -1;
+    }
+
     @GetMapping("/card/cleardb")
     int cleardb(@RequestParam int flag){
         return cardService.cleardb(flag);
