@@ -17,7 +17,8 @@ public class UserService {
 
         temp.setId(userVO.getId());
         temp.setPwd(userVO.getPwd());
-
+        temp.setAddress(userVO.getAddress());
+        temp.setName(userVO.getName());
 
         if(userRepository.existsById(userVO.getId())){
             System.out.println("중복된아이디");
