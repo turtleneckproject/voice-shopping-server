@@ -36,4 +36,10 @@ public class PaymentVO {
 
     @Column(name = "num")
     private String num;
+
+    @Column(name = "buymonth")
+    private String buymonth;
+
+    @Column(name = "buydate")
+    private String buydate;
 }

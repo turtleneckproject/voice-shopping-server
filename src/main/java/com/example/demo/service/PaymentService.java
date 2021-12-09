@@ -31,4 +31,13 @@ public class PaymentService {
         if(flag == 1)paymentRepository.deleteAllInBatch();
         return 1;
     }
+
+    public List<PaymentVO> showmonth(String customer, String buymonth) {
+        return paymentRepository.findByCustomerAndBuymonth(customer, buymonth);
+    }
+
+    public List<PaymentVO> showdate(String customer, String buymonth, String buydate){
+        return paymentRepository.findByCustomerAndBuymonthAndBuydate(customer, buymonth, buydate);
+    }
+
 }

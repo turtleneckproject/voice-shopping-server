@@ -12,4 +12,6 @@ import java.util.List;
 public interface PaymentRepository extends JpaRepository<PaymentVO, String> {
 
     List<PaymentVO> findByCustomer(String customer);
+    List<PaymentVO> findByCustomerAndBuymonth(String customer, String buymonth);
+    List<PaymentVO> findByCustomerAndBuymonthAndBuydate(String customer, String buymonth, String buydate);
 }

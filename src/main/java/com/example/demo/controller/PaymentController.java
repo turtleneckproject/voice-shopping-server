@@ -29,8 +29,19 @@ public class PaymentController {
         return paymentService.showpayment(customer);
     }
 
+    @GetMapping("/payment/showmonth")
+    List<PaymentVO> showmonth(@RequestParam String customer, String buymonth){
+        return paymentService.showmonth(customer, buymonth);
+    }
+
+    @GetMapping("/payment/showdate")
+    List<PaymentVO> showdate(@RequestParam String customer, String buymonth, String buydate){
+        return paymentService.showdate(customer, buymonth, buydate);
+    }
+
     @GetMapping("/payment/cleardb")
     int cleardb(@RequestParam int flag){
         return paymentService.cleardb(flag);
     }
+
 }

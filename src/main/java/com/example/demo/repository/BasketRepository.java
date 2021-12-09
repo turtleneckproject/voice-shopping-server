@@ -14,4 +14,5 @@ public interface BasketRepository extends JpaRepository<BasketVO, String> {
     int deleteByRowid(int rowid);
     boolean existsByCustomer(String customer);
     boolean existsByRowid(int rowid);
+
 }
