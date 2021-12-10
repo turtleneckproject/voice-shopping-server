@@ -18,8 +18,9 @@ public class CardService {
         else return -1;
     }
 
-    public void cardregister(CardVO cardVO){
+    public int cardregister(CardVO cardVO){
         cardRepository.save(cardVO);
+        return 1;
     }
 
     public List showcard(String userid){

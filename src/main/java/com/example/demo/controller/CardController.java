@@ -23,8 +23,8 @@ public class CardController {
     }
 
     @PostMapping("/card/pluscard")
-    void plus(@RequestBody CardVO newcard){
-        cardService.cardregister(newcard);
+    int plus(@RequestBody CardVO newcard){
+        return cardService.cardregister(newcard);
     }
 
     @GetMapping("/card/showcard")
