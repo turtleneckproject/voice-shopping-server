@@ -19,7 +19,7 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
-    @GetMapping("/login/check")
+    @GetMapping("/login/check")                 //로그인시 비밀번호 OTP 확인 작업
     int insertUser(@RequestParam String userid, @RequestParam int index, @RequestParam char input){
 
         String tmp = loginService.login(userid);

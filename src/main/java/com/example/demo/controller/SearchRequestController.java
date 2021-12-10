@@ -16,7 +16,7 @@ import java.util.List;
 public class SearchRequestController {
     private final NaverShopSearch naverShopSearch;
 
-    @GetMapping("/api/item")
+    @GetMapping("/api/item")                                        //네이버 쇼핑 api 이용하여 상품검색
     public List<ItemDto> getItems(@RequestParam String keyword, @RequestParam String option){
         String resultString = naverShopSearch.search(keyword, option);
         System.out.println(keyword);

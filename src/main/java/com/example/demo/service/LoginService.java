@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class LoginService {
     private final LoginRepository loginRepository;
 
-    public String login(String userid){
+    public String login(String userid){                             //로그인시 확인작업을 위해 비밀번호 반환
         UserVO tempuser = new UserVO();
         tempuser = loginRepository.findById(userid).get();
 

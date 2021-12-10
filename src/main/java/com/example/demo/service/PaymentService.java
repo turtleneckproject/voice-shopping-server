@@ -27,16 +27,16 @@ public class PaymentService {
         return paymentRepository.findByCustomer(customer);
     }
 
-    public int cleardb(int flag){
+    public int cleardb(int flag){                                       //  db날리기
         if(flag == 1)paymentRepository.deleteAllInBatch();
         return 1;
     }
 
-    public List<PaymentVO> showmonth(String customer, String buymonth) {
+    public List<PaymentVO> showmonth(String customer, String buymonth) {            //결제목록 결제월로 정렬
         return paymentRepository.findByCustomerAndBuymonth(customer, buymonth);
     }
 
-    public List<PaymentVO> showdate(String customer, String buymonth, String buydate){
+    public List<PaymentVO> showdate(String customer, String buymonth, String buydate){      //결제목록 결제월,일로 정렬
         return paymentRepository.findByCustomerAndBuymonthAndBuydate(customer, buymonth, buydate);
     }
 

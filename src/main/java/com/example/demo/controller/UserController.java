@@ -16,27 +16,22 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/register")
+    @PostMapping("/register")                                   //회원가입
     int insertUser(@RequestBody UserVO user){
-
-        String ID = user.getId();
-        //String PWD = user.getPwd();
-
-        System.out.println(ID);
         return userService.register(user);
     }
 
-    @GetMapping("/register/check")
+    @GetMapping("/register/check")                              //회원가입시 중복확인
     int checkId(@RequestParam String checkid){
         return userService.check(checkid);
     }
 
-    @GetMapping("/user/showinfo")
+    @GetMapping("/user/showinfo")                               //회원정보 반환
     UserVO showinfo(@RequestParam String userid){
         return userService.showuserinfo(userid);
     }
 
-    @GetMapping("/user/cleardb")
+    @GetMapping("/user/cleardb")                                //DB날리기
     int cleardb(@RequestParam int flag){
         return userService.cleardb(flag);
     }

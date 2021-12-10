@@ -29,17 +29,17 @@ public class PaymentController {
         return paymentService.showpayment(customer);
     }
 
-    @GetMapping("/payment/showmonth")
+    @GetMapping("/payment/showmonth")                                      // 해당 회원의 결제목록 월별로 반환
     List<PaymentVO> showmonth(@RequestParam String customer, String buymonth){
         return paymentService.showmonth(customer, buymonth);
     }
 
-    @GetMapping("/payment/showdate")
+    @GetMapping("/payment/showdate")                                        // 해당 회원의 결제목록 월별+날짜로 반환
     List<PaymentVO> showdate(@RequestParam String customer, String buymonth, String buydate){
         return paymentService.showdate(customer, buymonth, buydate);
     }
 
-    @GetMapping("/payment/cleardb")
+    @GetMapping("/payment/cleardb")                                         //db저장 정보 날리기
     int cleardb(@RequestParam int flag){
         return paymentService.cleardb(flag);
     }

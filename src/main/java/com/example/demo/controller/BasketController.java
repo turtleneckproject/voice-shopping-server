@@ -26,12 +26,12 @@ public class BasketController {
         return basketService.showbasket(customer);
     }
 
-    @GetMapping("/basket/deleteall")
+    @GetMapping("/basket/deleteall")                                    //해당 회원 장바구니 목록 모두 삭제
     int deleteall(@RequestParam String customer){
        return basketService.deleteall(customer);
     }
 
-    @GetMapping("/basket/deleteone")
+    @GetMapping("/basket/deleteone")                                    //해당 회원 장바구니 목록 선택 삭제
     int deleteone(@RequestParam int rowid){
         return basketService.deleteone(rowid);
     }

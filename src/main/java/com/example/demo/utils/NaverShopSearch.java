@@ -12,7 +12,7 @@ import java.util.List;
 
 @Component
 public class NaverShopSearch {
-    public String search(String query, String option) {
+    public String search(String query, String option) {                     //네이버 api 연동 form
         RestTemplate rest = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.add("X-Naver-Client-Id", "9kXUWrIibgOTcsHKxVjV");
@@ -27,7 +27,7 @@ public class NaverShopSearch {
         return response;
     }
 
-    public List<ItemDto> fromJSONtoItems(String result) {
+    public List<ItemDto> fromJSONtoItems(String result) {           //네이버 api 검색목록에서 원하는 정보(items) 추출하는 작업
         JSONObject rjson = new JSONObject(result);
         JSONArray items = rjson.getJSONArray("items");
         List<ItemDto> ret = new ArrayList<>();

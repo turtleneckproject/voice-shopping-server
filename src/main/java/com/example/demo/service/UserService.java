@@ -30,17 +30,17 @@ public class UserService {
         }
     }
 
-    public int check(String checkid){
+    public int check(String checkid){                                   //회원가입시 중복확인 작업
         if(userRepository.existsById(checkid))return -1;
         else return 1;
     }
 
-    public UserVO showuserinfo(String userid){
+    public UserVO showuserinfo(String userid){                          //회원정보 반환
         if(userRepository.existsById(userid))return userRepository.findById(userid).get();
         else return null;
     }
 
-    public int cleardb(int flag){
+    public int cleardb(int flag){                                       //db날리기
         if(flag==1)userRepository.deleteAllInBatch();
         return 1;
     }

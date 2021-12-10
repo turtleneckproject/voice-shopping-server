@@ -9,9 +9,8 @@ import java.util.List;
 @Repository
 public interface CardRepository extends JpaRepository<CardVO, String> {
 
-    List<CardVO> findByUserid(String userid);
-    //CardVO findByUseridAndCard_company(String userid, String card_company);
-    CardVO findCardVOByUseridAndCardcompany(String userid, String cardcompany);
-    boolean existsByUseridAndCardcompany(String userid, String cardcompany);
-    boolean existsByUserid(String userid);
+    List<CardVO> findByUserid(String userid);                                   //회원id로 카드 목록 모두 반환
+    CardVO findCardVOByUseridAndCardcompany(String userid, String cardcompany); //회원id, 카드사로 해당 카드 반환
+    boolean existsByUseridAndCardcompany(String userid, String cardcompany);    //회원id, 카드사로 해당 카드 존재여부 파악
+    boolean existsByUserid(String userid);                                      //회원id로 회원존재여부 파악
 }

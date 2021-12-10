@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 @Setter
 @Getter
-public class ItemDto {
+public class ItemDto {                              // api에서 얻어온 물품 정보
     private String title;
     private String link;
     private String image;
